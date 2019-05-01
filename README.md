@@ -8,3 +8,9 @@ git clone into Neovim Configuration
 - Mac: `$HOME/.config/.nvim`
 
 Run `:PlugInstall`
+
+## Depedencies
+
+EditorConfigCore
+
+If vim is not complied with python (check with `:ver`), please install editorconfig runtime from [here](https://github.com/editorconfig/editorconfig-core-c)
