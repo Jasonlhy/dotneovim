@@ -138,6 +138,11 @@ map <Space>j  <C-W>j
 map <Space>k  <C-W>k
 map <Space>l  <C-W>l
 
+" vs split the new new at right
+set splitright
+" s vsplit the new window at below
+set splitbelow
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTreeSection
 """"""""""""""""""""""""""""""""""""""""""""""""""
