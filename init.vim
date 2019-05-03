@@ -83,6 +83,15 @@ command RemoveMultipleLines %s/\n\{3,}/\r\r/g
 map j gj
 " previous line is really previous line
 map k gk
+" use mouse in all mode
+set mouse=a
+
+" Shift-j/k deletes blank line below/above, and Ctrl-j/k inserts.
+"nnoremap <silent><S-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><S-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => Appearance setting of document
