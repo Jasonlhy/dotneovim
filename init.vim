@@ -9,8 +9,15 @@ Plug 'mattn/emmet-vim'
 Plug 'sudar/comments.vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Windows Operation
+""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('win32')
+    source $VIMRUNTIME/mswin.vim
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP
@@ -69,9 +76,8 @@ set hidden
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-"clearing highlighted search
-nmap <silent> <leader>/ :nohlsearch<CR>
-
+" Clear highlighted search
+nmap <silent> <leader>/ :nohlsearch<CR> 
 
 " Remove multiple blank line
 " Only leave one blank line
@@ -89,7 +95,6 @@ set mouse=a
 " Shift-j/k deletes blank line below/above, and Ctrl-j/k inserts.
 "nnoremap <silent><S-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><S-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
@@ -139,6 +144,9 @@ func! ChangeDir()
     :echo "Change to current Directory"
 endfunc
 
+"Put today after the line after it
+map <leader>td :pu=strftime('%Y-%m-%d')<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => Switching Between each window more easier
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,6 +157,7 @@ map <Space>l  <C-W>l
 
 " vs split the new new at right
 set splitright
+
 " s vsplit the new window at below
 set splitbelow
 
