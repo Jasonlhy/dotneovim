@@ -10,6 +10,7 @@ Plug 'sudar/comments.vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,3 +169,11 @@ set splitbelow
 map <leader>nt :NERDTreeFind<CR>
 " Open the three starting from the current Directory
 let NERDTreeChDirMode=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Clean up chinese article
+""""""""""""""""""""""""""""""""""""""""""""""""""
+func! CleanChineseArticle()
+    :!dbtosb -s "all" % -o %
+    :!pangu % %
+endfunc
