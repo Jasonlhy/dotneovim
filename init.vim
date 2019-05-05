@@ -86,6 +86,11 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " \r stand for return character to be inserted
 command RemoveMultipleLines %s/\n\{3,}/\r\r/g  
 
+func! RemoveStartBlank()
+    :%s/{\n\{1,}/{\r/g
+    :%s/(\n\{1,}/(\r/g
+endfunc
+
 " next line is really next line
 map j gj
 " previous line is really previous line
