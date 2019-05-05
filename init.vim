@@ -10,6 +10,7 @@ Plug 'sudar/comments.vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
